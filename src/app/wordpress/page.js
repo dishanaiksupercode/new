@@ -1,6 +1,6 @@
 async function getPages() {
   const res = await fetch(
-    'http://localhost:81/my-site/wp-json/wp/v2/pages'
+    `${process.env.NEXT_PUBLIC_WP_URL}/wp-json/wp/v2/posts?_embed`
   );
   const pages = await res.json();
   return pages;
